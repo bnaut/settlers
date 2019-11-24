@@ -1,5 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+//import Hextile from './components/Hextile/Hextile';
+import Hexgrid from './components/Hexgrid/Hexgrid';
+
 import './board.scss';
 
 class Board extends React.Component {
@@ -18,7 +22,7 @@ class Board extends React.Component {
   render() {
     return (
       <div id='board'>
-        <div className='hexagon'><span><div></div></span></div>
+        <Hexgrid width={800} height={600} />
       </div>
     );
   }
