@@ -1,9 +1,13 @@
 {
-  "name": "server",
+  "name": "@settlers/server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "license": "MIT",
   "dependencies": {
-    "game": "1.0.0"
+    "boardgame.io": "^0.34.1",
+    "@settlers/game": "1.0.0"
+  },
+  "scripts": {
+    "start": "node src/index"
   }
 }

@@ -1,0 +1,6 @@
+{
+  "name": "boardgame.io/server",
+  "private": true,
+  "main": "../dist/server.js",
+  "module": "../dist/server.js"
+}

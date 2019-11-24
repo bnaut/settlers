@@ -1,0 +1,1 @@
+add ./server to node_modules/boardgame.io

@@ -18,13 +18,7 @@ class Board extends React.Component {
   render() {
     return (
       <div id='board'>
-        <div className='hex'>
-          
-        </div>
-
-        {/*<canvas id="myCanvas" width="800" height="600">
-
-    </canvas>*/}
+        <div className='hexagon'><span><div></div></span></div>
       </div>
     );
   }

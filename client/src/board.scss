@@ -1,4 +1,13 @@
- #board {
+$hexcolor: #fff;
+$hexwidth: 110px;
+@mixin hex-shadow {
+  box-shadow: rgba(50, 50, 93, 0.1) 0px 0px 0px 1px, 
+    rgba(50, 50, 93, 0.1) 0px 2px 5px 0px, 
+    rgba(0, 0, 0, 0.07) 0px 1px 1.5px 0px, 
+    rgba(0, 0, 0, 0.08) 0px 1px 2px 0px,
+    #b4ad94ff 0px 0px 3px 0px; // border
+}
+#board {
   border-collapse: collapse;
   font-family: monospace;
 }
@@ -8,7 +17,9 @@
   align-items: center;
   width: 75%;
   padding: 40px 40px;
+  min-height: 300px;
   border:1px solid #eee;
+  //background: linear-gradient(to right bottom, #2386f0, #2ca3f5);
 }
 
 #myCanvas {
@@ -16,13 +27,69 @@
   margin: auto;
 }
 
-.hex {
+
+$scale-factor: 0.3;
+$width: 300px;
+.hexagon {
   position: relative;
-  width: 50px;
-  height: 50px;
-  box-shadow: rgba(50, 50, 93, 0.1) 0px 0px 0px 1px, 
-    rgba(50, 50, 93, 0.1) 0px 2px 5px 0px, 
-    rgba(0, 0, 0, 0.07) 0px 1px 1.5px 0px, 
-    rgba(0, 0, 0, 0.08) 0px 1px 2px 0px;
+  width: $width * $scale-factor; 
+  height: 173.21px * $scale-factor;;
+  background-color: $hexcolor;
+  margin: 86.60px 0;
+  @include hex-shadow;
   cursor: pointer;
+  &:hover {
+    background: #d6eeff;
+  }
+
+  > span {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:0px;
+    left: 0;
+    width:300px * $scale-factor;
+    height:173.2051px * $scale-factor;
+    z-index: 2;
+    background: inherit;
+  
+    > div {
+      position: absolute;
+      background: #fff;
+      width: $width * 0.3;
+      height: $width * 0.3;
+      @include hex-shadow;
+      z-index: 100;
+      cursor: pointer;
+      border-radius: $width * 0.3;
+
+      &:hover {
+        background: #d6eeff;
+      }
+    }
+  }
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 212.13px * $scale-factor;
+  height: 212.13px * $scale-factor;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+  background-color: inherit;
+  left: 43.9340px * $scale-factor;
+  @include hex-shadow;
+}
+
+.hexagon:before {
+  top: -106.0660px * $scale-factor;
+}
+
+.hexagon:after {
+  bottom: -106.0660px * $scale-factor;
 }
