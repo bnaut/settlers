@@ -1,7 +1,7 @@
 @import '../../common.scss';
 
-$scale-factor: 0.3;
-$width: 300px;
+$hexcolor: #fff;
+$hexwidth: 110px;
 
 .hextile {
   background-color: $hexcolor;
@@ -9,56 +9,29 @@ $width: 300px;
   cursor: pointer;
   &:hover {
     background: #d6eeff;
+    .before, .after {
+      background: #d6eeff;
+    }
   }
 
   > span {
-    display: grid;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top:0px;
-    left: 0;
-    width:300px * $scale-factor;
-    height:173.2051px * $scale-factor;
-    z-index: 2;
     background: inherit;
   
-   /* > div {
-      position: absolute;
+    > div {
       background: #fff;
-      width: $width * 0.3;
-      height: $width * 0.3;
       @include hex-shadow;
-      z-index: 100;
       cursor: pointer;
-      border-radius: $width * 0.3;
 
       &:hover {
         background: #d6eeff;
       }
-    }*/
+    }
   }
 }
 
-.hextile:before,
-.hextile:after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  width: 212.13px * $scale-factor;
-  height: 212.13px * $scale-factor;
-  -webkit-transform: scaleY(0.5774) rotate(-45deg);
-  -ms-transform: scaleY(0.5774) rotate(-45deg);
-  transform: scaleY(0.5774) rotate(-45deg);
-  background-color: inherit;
-  left: 43.9340px * $scale-factor;
+.before, .after {
+  background-color: $hexcolor;
   @include hex-shadow;
-}
-
-.hextile:before {
-  top: -106.0660px * $scale-factor;
-}
-
-.hextile:after {
-  bottom: -106.0660px * $scale-factor;
 }

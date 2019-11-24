@@ -21,6 +21,23 @@ const Hexgrid = ({ width, height, radius }) => {
         <Hextile x={0} z={0} grid={{width, height}}/>
         <Hextile x={0} z={-1} grid={{width, height}}/>
         <Hextile x={0} z={1} grid={{width, height}}/>
+        <Hextile x={-1} z={1} grid={{width, height}}/>
+        <Hextile x={-1} z={0} grid={{width, height}}/>
+        <Hextile x={1} z={0} grid={{width, height}}/>
+        <Hextile x={1} z={-1} grid={{width, height}}/>
+
+        <Hextile x={0} z={-2} grid={{width, height}}/>
+        <Hextile x={1} z={-2} grid={{width, height}}/>
+        <Hextile x={2} z={-2} grid={{width, height}}/>
+        <Hextile x={2} z={-1} grid={{width, height}}/>
+        <Hextile x={2} z={0} grid={{width, height}}/>
+        <Hextile x={1} z={1} grid={{width, height}}/>
+        <Hextile x={0} z={2} grid={{width, height}}/>
+        <Hextile x={-1} z={2} grid={{width, height}}/>
+        <Hextile x={-2} z={2} grid={{width, height}}/>
+        <Hextile x={-2} z={1} grid={{width, height}}/>
+        <Hextile x={-2} z={0} grid={{width, height}}/>
+        <Hextile x={-1} z={-1} grid={{width, height}}/>
     </div>
   )
 }

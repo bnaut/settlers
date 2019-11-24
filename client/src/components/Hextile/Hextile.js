@@ -1,28 +1,75 @@
 import React from "react";
 import './Hextile.scss';
 
-const width = 300;
-const height = 173.21;
+const WIDTH = 300;
+const HEIGHT = 173.21;
+const SCALE_FACTOR = 0.3;
+const PADDING = 10;
+const hexCSS = {
+  position: 'absolute',
+  width: 212.13 * SCALE_FACTOR,
+  height: 212.13 * SCALE_FACTOR,
+  '-webkit-transform': 'scaleY(0.5774) rotate(-45deg)',
+  '-ms-transform': 'scaleY(0.5774) rotate(-45deg)',
+  transform: 'scaleY(0.5774) rotate(-45deg)',
+  left: 43.9340 * SCALE_FACTOR,
+  'z-index': 1,
+}
 
-const scale_factor = 0.3;
+//const getY = (x, z) => -(x+z);
 
 const Hextile = ({ x, z, grid }) => {
 
-  console.log(grid)
+  const top = (WIDTH * SCALE_FACTOR + PADDING) * Math.sin(Math.PI/3) * z;
+  const left = (WIDTH * SCALE_FACTOR * Math.cos(Math.PI/3) + PADDING/2) * z + 
+    (WIDTH * SCALE_FACTOR + PADDING) * x;
 
   return (
     <div 
       className='hextile'
       style={{
         position: 'absolute',
-        top: grid.height / 2 - height * scale_factor / 2,
-        left: grid.width / 2 - width * scale_factor / 2,
-        width: width * scale_factor,
-        height: height * scale_factor
+        top: grid.height / 2 - HEIGHT * SCALE_FACTOR / 2 + top,
+        left: grid.width / 2 - WIDTH * SCALE_FACTOR / 2 + left,
+        width: WIDTH * SCALE_FACTOR,
+        height: HEIGHT * SCALE_FACTOR
       }}  
     >
-      <span>
-        <div></div>
+      <div 
+        className='before'
+        style={{
+          ...hexCSS,
+          top: -106.0660 * SCALE_FACTOR,
+        }}
+      />
+      <div 
+        className='after'
+        style={{
+          ...hexCSS,
+          bottom: -106.0660 * SCALE_FACTOR,
+        }}
+      />
+      <span 
+        style={{
+          display: 'grid',
+          position: 'absolute',
+          top: 0, 
+          left: 0,
+          width: WIDTH * SCALE_FACTOR,
+          height: HEIGHT * SCALE_FACTOR,
+          'z-index': 2,
+        }}
+      >
+        <div 
+          style={{
+            position: 'absolute',
+            width: WIDTH * 0.3,
+            height: WIDTH * 0.3,
+            'z-index': 100,
+            'border-radius': WIDTH * 0.3,
+          }} 
+        />
+
       </span>
     </div>
   )
