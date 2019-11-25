@@ -20,8 +20,8 @@ $hexwidth: 110px;
     background: inherit;
   
     > div {
-      background: #fff;
-      @include hex-shadow;
+      //background: #fff;
+      //@include hex-shadow;
       cursor: pointer;
 
       &:hover {

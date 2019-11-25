@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 //import Hextile from './components/Hextile/Hextile';
-import Hexgrid from './components/Hexgrid/Hexgrid';
+import Hexgrid from '../Hexgrid/Hexgrid';
 
-import './board.scss';
+import './Board.scss';
 
 class Board extends React.Component {
   static propTypes = {

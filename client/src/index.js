@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { Client } from 'boardgame.io/react';
 
 import Settlers from '@settlers/game';
-import Board from './board';
+import Board from './components/Board/Board';
 
 import './index.scss';
 
