@@ -9,16 +9,16 @@ const hexCSS = {
   position: 'absolute',
   width: 212.13 * SCALE_FACTOR,
   height: 212.13 * SCALE_FACTOR,
-  '-webkit-transform': 'scaleY(0.5774) rotate(-45deg)',
-  '-ms-transform': 'scaleY(0.5774) rotate(-45deg)',
+  'WebkitTransform': 'scaleY(0.5774) rotate(-45deg)',
+  'msTransform': 'scaleY(0.5774) rotate(-45deg)',
   transform: 'scaleY(0.5774) rotate(-45deg)',
   left: 43.9340 * SCALE_FACTOR,
-  'z-index': 1,
+  'zIndex': 1,
 }
 
 //const getY = (x, z) => -(x+z);
 
-const Hextile = ({ x, z, grid }) => {
+const Hextile = ({ x, z, grid, onClick }) => {
 
   const top = (WIDTH * SCALE_FACTOR + PADDING) * Math.sin(Math.PI/3) * z;
   const left = (WIDTH * SCALE_FACTOR * Math.cos(Math.PI/3) + PADDING/2) * z + 
@@ -26,6 +26,7 @@ const Hextile = ({ x, z, grid }) => {
 
   return (
     <div 
+      onClick={() => onClick(0)}
       className='hextile'
       style={{
         position: 'absolute',
@@ -57,7 +58,7 @@ const Hextile = ({ x, z, grid }) => {
           left: 0,
           width: WIDTH * SCALE_FACTOR,
           height: HEIGHT * SCALE_FACTOR,
-          'z-index': 2,
+          'zIndex': 2,
         }}
       >
         <div 
@@ -65,8 +66,8 @@ const Hextile = ({ x, z, grid }) => {
             position: 'absolute',
             width: WIDTH * 0.3,
             height: WIDTH * 0.3,
-            'z-index': 100,
-            'border-radius': WIDTH * 0.3,
+            'zIndex': 100,
+            'borderRadius': WIDTH * 0.3,
           }} 
         />
 

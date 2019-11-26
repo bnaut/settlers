@@ -22,7 +22,7 @@ class Board extends React.Component {
   render() {
     return (
       <div id='board'>
-        <Hexgrid width={800} height={600} />
+        <Hexgrid {...this.props} width={800} height={600} />
       </div>
     );
   }
